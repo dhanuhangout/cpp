@@ -1,0 +1,9 @@
+
+Notes:
+Variables declared with const added becomes constants and cannot be altered by the program.
+Declaration: put const either before or after the type. Eg: int const x=5; or const int x=4;
+In the above eg., we are only making data referred to const and references cannot change what they refer to.
+Pointers have 2 ways that we can use:
+- change the date pointed to.
+- change the pointer itself.
+
