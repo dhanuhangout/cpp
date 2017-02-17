@@ -21,12 +21,12 @@ typedef std::map<std::string, StringValue> StringMap;
 
 typedef StringMap::value_type StringMapValue;
 
-static const StringMapValue stringMapEntries[] = {
+/*static const StringMapValue stringMapEntries[] = {
   StringMapValue( "First Value", evStringValue1 ),
   StringMapValue( "Second Value", evStringValue2 ),
   StringMapValue( "Third Value", evStringValue3 ),
   StringMapValue( "end", evEnd ),
-};
+};*/
 
 
 //static const StringMap s_mapStringValues( &stringMapEntries[evStringValue1], &stringMapEntries[evNumVals] );
