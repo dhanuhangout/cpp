@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 // Value-Defintions of the different String values
-enum StringValue { evNotDefined=0, 
+enum StringValue { evNotDefined, 
                           evStringValue1, 
                           evStringValue2, 
                           evStringValue3, 
@@ -17,11 +17,9 @@ static char szInput[_MAX_PATH];
 // Intialization
 static void Initialize();
 
-typedef std::map<std::string, StringValue> StringMap;
-
+/*typedef std::map<std::string, StringValue> StringMap;
 typedef StringMap::value_type StringMapValue;
-
-/*static const StringMapValue stringMapEntries[] = {
+static const StringMapValue stringMapEntries[] = {
   StringMapValue( "First Value", evStringValue1 ),
   StringMapValue( "Second Value", evStringValue2 ),
   StringMapValue( "Third Value", evStringValue3 ),
