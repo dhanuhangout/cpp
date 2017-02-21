@@ -1,22 +1,36 @@
-#include <stdio.h>
+/**
+C++ Program list all files in the Directory by codebind.com
+*/
+ 
+ 
 #include <dirent.h>
-#include <sys/types.h>
-
-static void list_dir(const char *path)
-{
-    struct dirent *entry;
-    DIR *dir = opendir(path);
-    if (dir == NULL) {
-        return;
-    }
-
-    while ((entry = readdir(dir)) != NULL) {
-        printf("%s\n",entry->d_name);
-    }
-
-    closedir(dir);
+#include <cstring>
+#include <iostream>
+#include <vector>
+#include <memory>
+ 
+namespace {
+std::vector<std::string> GetDirectoryFiles(const std::string& dir) {
+  std::vector<std::string> files;
+  std::shared_ptr<DIR> directory_ptr(opendir(dir.c_str()), [](DIR* dir){ dir && closedir(dir); });
+  struct dirent *dirent_ptr;
+  if (!directory_ptr) {
+    std::cout << "Error opening : " << std::strerror(errno) << dir << std::endl;
+    return files;
+  }
+ 
+  while ((dirent_ptr = readdir(directory_ptr.get())) != nullptr) {
+    files.push_back(std::string(dirent_ptr->d_name));
+  }
+  return files;
 }
-
+}  // namespace
+ 
 int main() {
-	list_dir("../../");
+  const auto& directory_path = std::string(".");
+  const auto& files = GetDirectoryFiles(directory_path);
+  for (const auto& file : files) {
+    std::cout << file << std::endl;
+  }
+  return 0;
 }
