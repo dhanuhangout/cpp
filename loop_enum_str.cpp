@@ -23,8 +23,13 @@ int main(int argc, char* argv[])
   Initialize();
 
   // cout << evStringValue1 << endl;
+  cout << "Printing only Values." << endl;
   for (StringValue m=evNotDefined; m<=evNumVals; m=StringValue(m+1))
 	  cout << m << endl;
+
+  cout << "\nPrinting Both Keys and Values." << endl;
+  for (std::map<std::string, StringValue>::iterator it=s_mapStringValues.begin(); it != s_mapStringValues.end(); it++)
+	  cout << it->first << " => " << it->second << endl;
   return 0;
 }
 
