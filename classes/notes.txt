@@ -1,0 +1,11 @@
+- Class declaration defines a new type that links code and data. This new types
+  is then used to declare objects of that class.
+- A class is a logical abstraction, but an object has physical existence. or an
+  object is an instance of a class.
+- "public" access specifier allows functions or data to be accessible to other
+  parts of program.
+- "protected" access specifier is needed only when inheritance is involved.
+- "private" access specifier: by default, functions and data declared within a
+  class are private to that class and may be accessed only by other members of
+  the class.
+
